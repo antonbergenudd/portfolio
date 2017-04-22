@@ -19,10 +19,23 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
+                font-size: 1.2rem;
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 2rem;
             }
 
             .full-height {
                 height: 100vh;
+            }
+
+            .half-height {
+                height: 50vh;
             }
 
             .flex-center {
@@ -45,8 +58,21 @@
                 text-align: center;
             }
 
+            .header {
+                margin-bottom: 4rem;
+            }
+
             .title {
-                font-size: 84px;
+                font-weight: normal;
+                margin-bottom: 0;
+            }
+
+            .sub-title {
+                margin-top: 0;
+                margin-left: .5rem;
+                text-align: left;
+                font-size: 1.3rem;
+                opacity: .6;
             }
 
             .links > a {
@@ -59,36 +85,69 @@
                 text-transform: uppercase;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            .block {
+                height: 100%;
+                float:left;
+            }
+
+            .block.half {
+                width: 50%;
+                overflow: hidden;
+            }
+
+            .image {
+                height: 100%;
+                width: auto;
             }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
+        <div class="contact" style="position: fixed; right:1rem; top:20rem;">
+            Contact
+        </div>
 
+        <div class="logo" style="position: fixed; left:3rem; top:3rem;">
+            Logo
+        </div>
+
+        <div class="flex-center position-ref full-height">
             <div class="content">
-                <div class="title m-b-md">
-                    Antons portfolio
+                <div class="header">
+                    <h1 class="title">Title</h1>
+                    <p class="sub-title">email</p>
                 </div>
+
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="#about">About me</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#location">Location</a>
+                    <a href="#request">Request work</a>
                 </div>
+            </div>
+        </div>
+
+        <div class="full-height" id="about">
+            <div class="flex-center block half">
+                <img class="image" src="{{ asset('img/test.png') }}" alt="">
+            </div>
+            <div class="flex-center block half">
+                Text
+            </div>
+        </div>
+        <div class="flex-center full-height" id="portfolio">
+            <div class="content">
+                Portfolio
+            </div>
+        </div>
+        <div class="flex-center full-height" id="location" style="background-color: rgba(0,0,0,.1)">
+            <div class="content">
+                Parallax scroll with map
+            </div>
+        </div>
+        <div class="flex-center half-height" id="request">
+            <div class="content">
+                Send email section
             </div>
         </div>
     </body>
