@@ -137,7 +137,7 @@
         </div>
         <div class="flex-center full-height" id="portfolio">
             <div class="content">
-                Portfolio
+                Portfolio2
             </div>
         </div>
         <div class="flex-center full-height" id="location" style="background-color: rgba(0,0,0,.1)">
