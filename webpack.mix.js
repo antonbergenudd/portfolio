@@ -1,5 +1,7 @@
 const { mix } = require('laravel-mix');
 
+const path = 'resources/assets/js/';
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -11,5 +13,14 @@ const { mix } = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.sass('resources/assets/sass/ported-sass.scss', 'public/css');
+
+mix.scripts([
+    path + 'malarkey.min.js',
+    path + 'smoothscroll.js',
+    path + 'ported-js.js',
+    path + 'ported-js-2.js',
+    path + 'ported-js-3.js',
+    path + 'animations.js',
+    path + 'username.js',
+], 'public/js/main.js').version();
